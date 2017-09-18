@@ -1,0 +1,22 @@
+apply plugin: 'org.springframework.boot'
+ 
+buildscript {
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootGradlePluginVersion")
+    }
+}
+ 
+dependencies {
+    compile project (':common')
+    compile project (':data')
+    
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+
+    compile "mysql:mysql-connector-java:$mysqlVersion"
+}
+
+// gradle :api:bootRun -Dspring.profiles.active=dev
+bootRun {
+    systemProperties = System.properties
+}

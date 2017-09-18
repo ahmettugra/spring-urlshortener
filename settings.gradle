@@ -1,0 +1,5 @@
+rootProject.name = 'UrlShortener'
+include 'common'
+include 'data'
+include 'api'
+include 'web'
